@@ -1,0 +1,144 @@
+/* generally edits */
+
+*{
+  color: white;
+  list-style-type: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  background-color: var(--main-color);
+  background:url(https://plus.unsplash.com/premium_photo-1714051661316-4432704b02f8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ;
+
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+ul li:hover{
+  background-color:var(--hov-color) ;
+  border-right: solid white 2px ;
+  padding: 5px;
+  transition: 0.1s;
+}
+:root{
+  --sec-color:rgba(187, 187, 255, 0.589);
+  --hov-color:rgba(196, 196, 253, 0.377);
+  --main-color:rgb(230, 230, 255);
+  --shadow-metarsham:0 0 6px rgba(0, 0, 0, 0.5);
+}
+/* logo */
+
+.logo{
+  font-size: 25px;
+  background-color: var(--sec-color);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom:30px
+}
+/* Parent */
+.main-box{
+  width: 250px;
+  height: 640px ;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-metarsham);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  transform: translateX(-250px);
+  transition: 0.3s;
+}
+/* list items */
+ul li{
+  margin-left: 20px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+/* social media icons */
+.social-media{
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+.face,.you,.insta,.twit{
+  margin-right: 20px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(255, 102, 102);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* hamburger toggle */
+input{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  appearance: none;
+  cursor: pointer;
+}
+.toggle{
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 3px;
+  box-sizing: 0 0 10 rgba(0,0,0,0.3);
+  cursor: pointer;
+  z-index: 1;
+}
+.toggle .all{
+  background-color: #fff;
+  width: 20px;
+  height: 3px;
+  position: absolute;
+  left: 5px;
+  border-radius: 50px;
+  transition: 0.3s ease;
+}
+.toggle .top{
+  top: 30%;
+  left:50%;
+  transform: translate(-50% , -50%);
+}
+.toggle .middle{
+  top: 50%;
+  left:50%;
+  transform: translate(-50% , -50%);
+}
+.toggle .bottom{
+  top: 70%;
+  left:50%;
+  transform: translate(-50% , -50%);
+}
+input:checked ~ .toggle .top{
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(-45deg);
+}
+input:checked ~ .toggle .bottom{
+  left: 2px;
+  top: 14px;
+  width: 25px;
+  transform: rotate(45deg);
+}
+input:checked ~ .toggle .middle{
+  opacity: 0;
+  transform: translateX(10px);
+}
+input:checked ~ .main-box{
+  transform: translateX(0);
+}
